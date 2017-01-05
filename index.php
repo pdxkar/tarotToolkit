@@ -3,42 +3,10 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src="displayCard.js"></script>
+ <!--  <script src="displayCard.js"></script> -->
+<?php include 'displayCard2.php';?>
 </head>
 <body>
-
-<?php
-	$user_name = "root";
-	$password = "";
-	$database = "tarottool";
-	$server = "127.0.0.1";
-	
-	$db_handle = mysqli_connect($server, $user_name, $password);
-	$db_found = mysqli_select_db($db_handle, $database);
-	
-	if ($db_found) {
-		$SQL = "SELECT * FROM cards";
-		$result = mysqli_query($db_handle, $SQL);
-		
-		while ( $db_field = mysqli_fetch_assoc($result) ) {
-		
-		print $db_field['cardId'] . "<BR>";
-		print $db_field['cardNumber'] . "<BR>";
-		print $db_field['cardName'] . "<BR>";
-		print $db_field['cardSuit'] . "<BR>";
-		print $db_field['cardDescription'] . "<BR>";
-		print $db_field['cardImageUrl'] . "<BR>";
-	}
-	
-	mysqli_close($db_handle);
-	
-	}
-	else {
-		print "Database NOT Found ";
-		mysql_close($db_handle);
-	}
-?>
-
 	<h1>Celtic Cross Position 1</h1>
 	<img src="celticCrossSpread_pos1.jpg" alt="celticCrossSpreadPosition1" style="width:304px;height:228px;">
 		<div class="centered">
@@ -107,11 +75,79 @@
 	    <br>
 	    <br>
 	    <select name="optthree" id="cardSel" size="1">
-	        <option value="xxx" selected="selected">Please select Suit first</option>
+	        <option value="" selected="selected">Please select Suit first</option>
 	    </select>
 	    <br/>
-	    <input type="button" onclick="getOption()" value="Click xxx Me!">
+	    <input type="button" onclick="getOption()" value="What is your card?">
 	</form>
 	<p id="theCard"></p>
+	<script>
+	
+		window.onload = function () {
+
+			//major arcana
+			var js_data_majorArcanaCards = '<?php echo json_encode($majorArcanaCards); ?>';
+			var js_obj_data_majorArcanaCards = JSON.parse(js_data_majorArcanaCards);
+			//pentacles
+			var js_data_pentacleCards = '<?php echo json_encode($pentacleCards); ?>';
+			var js_obj_data_pentacleCards = JSON.parse(js_data_pentacleCards);
+			//cups
+			var js_data_cupCards = '<?php echo json_encode($cupCards); ?>';
+			var js_obj_data_cupCards = JSON.parse(js_data_cupCards);
+			//wands
+			var js_data_wandCards = '<?php echo json_encode($wandCards); ?>';
+			var js_obj_data_wandCards = JSON.parse(js_data_wandCards);
+			//swords
+			var js_data_swordCards = '<?php echo json_encode($swordCards); ?>';
+			var js_obj_data_swordCards = JSON.parse(js_data_swordCards);
+
+   			var deckObject = {
+   	  			 "Rider Waite Deck": {
+   	  				"Major Arcana": js_obj_data_majorArcanaCards,
+   	  			    "Cups": js_obj_data_cupCards,
+   	  				"Swords": js_obj_data_swordCards,
+   	  				"Pentacles": js_obj_data_pentacleCards,
+   	  			    "Wands": js_obj_data_wandCards
+   	 			 }
+   	  		}  
+			
+		    var deckSel = document.getElementById("deckSel"),
+		        suitSel = document.getElementById("suitSel"),
+		        cardSel = document.getElementById("cardSel");
+	        //todo change state to more appropriate name
+		    for (var deck in deckObject) {
+		        deckSel.options[deckSel.options.length] = new Option(deck, deck);
+		    }
+		    deckSel.onchange = function () {
+		        suitSel.length = 1; // remove all options bar first
+		        cardSel.length = 1; // remove all options bar first
+		        if (this.selectedIndex < 1) return; // done   
+		        //todo change county to appropriate name
+		        for (var suit in deckObject[this.value]) {
+		            suitSel.options[suitSel.options.length] = new Option(suit, suit);
+		        }
+		    }
+		    deckSel.onchange(); // reset in case page is reloaded
+		    suitSel.onchange = function () {
+		        cardSel.length = 1; // remove all options bar first
+		        if (this.selectedIndex < 1) return; // done   
+		        var cards = deckObject[deckSel.value][this.value];
+		        for (var i = 0; i < cards.length; i++) {
+		            cardSel.options[cardSel.options.length] = new Option(cards[i], cards[i]);
+		        }
+		    }
+		}
+
+		function getOption() {
+			//get and display the card value
+			var cardObj = document.getElementById("cardSel");	
+			document.getElementById("theCard").innerHTML = cardObj.options[cardObj.selectedIndex].text;
+		}
+
+		function test() {
+			var js_data = '<?php echo json_encode($majorArcanaCards); ?>';
+			var js_obj_data = JSON.parse(js_data );
+		}
+	</script>
 	</body>
 </html>
