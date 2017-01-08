@@ -2,23 +2,38 @@
     include 'db.inc.php';
 
 	//$st = $app['pdo']->prepare('SELECT recipeid,title,poster,shortdesc from recipes order by recipeid desc limit 0,5');
-    $st = $app['pdo']->prepare('SELECT cardId, cardNumber, cardName, cardSuit, cardDescription, cardImageUrl from cards order by cardId desc limit 0,100');
+	
+    //Fetches all the Decks
+    $st = $app['pdo']->prepare('SELECT deckId, deckName from decks order by deckId desc limit 0,100');
+    $st->execute();
+    $resultDecks = $st->fetchAll();
+    
+    //Fetches all the suits
+  //  $st = $app['pdo']->prepare('SELECT suitId, deckId, suitName from suits where deckId = $deckId order by suitId desc limit 0,100');
+   // $st->execute();
+  //  $resultSuits = $st->fetchAll();
+    
+    //Fetches all the cards
+    $st = $app['pdo']->prepare('SELECT cardId, deckId, cardNumber, cardName, suitId, cardDescription, cardImageUrl from cards order by cardId desc limit 0,100');
 	$st->execute();
+	$resultCard = $st->fetchAll(); 
+	
+	
 	
 	//Cards
-	$majorArcanaCards = [];
-	$pentacleCards = [];
-	$cupCards = [];
-	$wandCards = [];
-	$swordCards = [];
+// 	$majorArcanaCards = [];
+// 	$pentacleCards = [];
+// 	$cupCards = [];
+// 	$wandCards = [];
+// 	$swordCards = [];
 	
 	//is this unnecessary?
 		//$titles = array();
-	while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+/* 	while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
 		$app['monolog']->addDebug('Row ' . $row['cardName']);
 		
 		//is this unnecessary?
-		$titles[] = $row;
+		//$titles[] = $row;
 		
 		$cardId = $row['cardId'];
 		$cardNumber = $row['cardNumber'];
@@ -26,8 +41,6 @@
 		$cardSuit = $row['cardSuit'];
 		$cardDescription = $row['cardDescription'];
 		$cardImageUrl = $row['cardImageUrl'];
-		
-		//$suit = $db_field['cardSuit'];
 		
 		switch ($cardSuit) {
 			case 1:
@@ -69,12 +82,12 @@
 				//	code to be executed if n is different from all labels;
 				//print $db_field['cardName'] . " has a weird suit.<BR>";
 				print $cardName . " has a weird suit.<BR>";
-		}
+		} */
 		
 		//diplay data in the web page
 		//first create an HTML link
 		//echo "<a href=\"index.php?content=showCard&id=$cardId\">$cardName</a> submitted by $cardSuit<br>\n";
 
-	}
+	//}
 
 ?>

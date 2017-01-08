@@ -1,9 +1,9 @@
-<?php include 'cardsDb.inc.php'; ?>
-<?php include 'displayCard.inc.php'; ?>
-
 	<h1>Celtic Cross Position 1</h1>
-	<img src="celticCrossSpread_pos1.jpg" alt="celticCrossSpreadPosition1" style="width:304px;height:228px;">
-		<div class="centered">
+	
+		<!--  <div class="centered"> -->
+		<div class="main">
+		<img src="celticCrossSpread_pos1.jpg" alt="celticCrossSpreadPosition1" style="width:304px;height:228px;">
+
 			<div id="bulletPoints">
 			    <ul class="left">
 				    <li>HEART OF THE MATTER</li>
@@ -55,23 +55,95 @@
 					</ul>
 			</div>
 		</div>
-	<div class="centered">
+	<!--  <div class="centered">-->
+	<div class="main">
 	<p>Select the card in your Celtic Cross' position 1:</p>
-	<form>
-	    <select name="optone" id="deckSel" size="1">
-	        <option value="" selected="selected">Select Deck</option>
-	    </select>
-	    <br>
-	    <br>
-	    <select name="opttwo" id="suitSel" size="1">
-	        <option value="" selected="selected">Please select Deck first</option>
-	    </select>
-	    <br>
-	    <br>
-	    <select name="optthree" id="cardSel" size="1">
-	        <option value="" selected="selected">Please select Suit first</option>
-	    </select>
-	    <br/>
-	    <input type="button" onclick="getOption()" value="What is your card?">
-	</form>
-	<p id="theCard"></p>
+
+<?php include 'db.inc.php'; 
+
+//Fetch all the Decks
+$st = $app['pdo']->prepare('SELECT deckId, deckName from decks order by deckId desc limit 0,100');
+$st->execute();
+$resultDecks = $st->fetchAll();
+?>
+
+<div class="frmDronpDown">
+<div class="row">
+<label>Deck:</label><br/>
+<select name="deck" id="deck-list" class="demoInputBox" onChange="getSuits(this.value);">
+<option value="">Select Deck</option>
+<?php
+foreach($resultDecks as $row) {
+?>
+<option value="<?php echo $row["deckId"]; ?>"><?php echo $row["deckName"]; ?></option>
+<?php
+}
+?>
+</select>
+</div>
+
+<div class="row">
+<label>Suits:</label><br/>
+<select name="suits" id="suit-list" class="demoInputBox" onChange="getCards(this.value);">
+<option value="">Select Suit</option>
+
+</select>
+</div>
+
+<div class="row">
+<label>Cards:</label><br/>
+<select name="cards" id="cards-list" class="demoInputBox" onChange="getCard(this.value);">
+<option value="">Select Card</option>
+</select>
+</div>
+
+<div class="row">
+<label>Your card of the day:</label><br/>
+
+<p id="card-list"></p>
+</div>
+</div>
+
+	
+<script>
+function getSuits(val) {
+	$.ajax({
+	type: "POST",
+	url: "getSuits.inc.php",
+	//data:'country_id='+val,
+	data:'deckId='+val,
+	success: function(data){
+		$("#suit-list").html(data);
+	}
+	});
+}
+
+function getCards(val) {
+	$.ajax({
+	type: "POST",
+	url: "getCards.inc.php",
+	//data:'country_id='+val,
+	data:'suitId='+val,
+	success: function(data){
+		$("#cards-list").html(data);
+	}
+	});
+}
+//this is probably not the right way to do it since we already have all of the selected card's info
+function getCard(val) {
+	$.ajax({
+	type: "POST",
+	url: "getCard.inc.php",
+	//data:'country_id='+val,
+	data:'cardId='+val,
+	success: function(data){
+		$("#card-list").html(data);
+	}
+	});
+}
+
+function selectDeck(val) {
+$("#search-box").val(val);
+$("#suggesstion-box").hide();
+}
+</script>

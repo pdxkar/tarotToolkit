@@ -16,7 +16,8 @@ h1 {
     margin: 0 auto;
     border-style: solid;
     text-align: left;
-    width: 600px;
+   /* width: 400px; /*I'm not sure that this does anything */
+   width: 60%;
     padding: 10px;
 }
 
@@ -28,19 +29,19 @@ h1 {
 
 .left {
 	margin-top: 0px;
-	width: 300px;
+	width: 200px;
 	float: left;
 	/*background-color: pink;*/
 }
 
 .right {
 	margin-top: 0px;
-	margin-left: 320px;
+	margin-left: 220px;
 	/*background-color: orange;*/
 }
 
 .leftColumn {
-	width: 300px;
+	width: 200px;
 	float: left;
 	/*padding-left: 50px;*/
 	/*background-color: red;*/
@@ -53,7 +54,7 @@ h1 {
 }
 
 .rightColumn {
-	margin-left: 320px;
+	margin-left: 220px;
 	/*background-color: yellow;*/
 }
 

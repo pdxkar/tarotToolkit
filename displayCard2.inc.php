@@ -1,10 +1,14 @@
-<?php include 'db.inc.php'; ?>
 <script>
 window.onload = function () {
 
 	//Decks
+	$st = $app['pdo']->prepare('SELECT deckId, deckName from decks order by deckId desc limit 0,100');
+	$st->execute();	
+	$resultDecks = $st->fetchAll();
+	//var js_data_decks = '<?php echo json_encode($resultDecks); ?>';
 	
 	//Suits
+	
 
 	//Cards
 	//major arcana
@@ -36,7 +40,7 @@ window.onload = function () {
     var deckSel = document.getElementById("deckSel"),
         suitSel = document.getElementById("suitSel"),
         cardSel = document.getElementById("cardSel");
-
+    //todo change state to more appropriate name
     for (var deck in deckObject) {
         deckSel.options[deckSel.options.length] = new Option(deck, deck);
     }
@@ -44,7 +48,7 @@ window.onload = function () {
         suitSel.length = 1; // remove all options bar first
         cardSel.length = 1; // remove all options bar first
         if (this.selectedIndex < 1) return; // done   
-
+        //todo change county to appropriate name
         for (var suit in deckObject[this.value]) {
             suitSel.options[suitSel.options.length] = new Option(suit, suit);
         }
