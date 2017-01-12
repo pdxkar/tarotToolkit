@@ -1,108 +1,497 @@
-body{
-  font-family: Arial,sans-serif;
-  font-size: 80%;
-  color: #333333;
-  line-height: 1.166; 
-  margin: 0px;
-  padding: 0px;
+body {
+	/*  font-family: Arial,sans-serif; */
+	/*  font-family: Arial Narrow, sans-serif; */ /* hard to read */
+	/*    font-family: Bookman, serif; */ /* maybe */
+	/*   font-family: Comic Sans MS, Comic Sans, cursive; */ /* maybe */
+	/*   font-family: Chalkduster, fantasy; */ /* nah */
+	/* font-family: Snell Roundhand, cursive; */
+/* 	font-family: Verdana, Arial, sans-serif; */
+	font-size: 90%;
+	color: #333333;
+	line-height: 1.166;
+	margin: 0px;
+	padding: 0px;
+	/*   border: 2px solid red; */
 }
 
-a{
-  color: #006699;
-  text-decoration: none;
+a {
+	color: #006699;
+	text-decoration: none;
 }
 
-a:link{
-  color: #006699;
-  text-decoration: none;
+a:link {
+	color: #006699;
+	text-decoration: none;
 }
 
-a:visited{
-  color: #006699;
-  text-decoration: none;
+a:visited {
+	color: #006699;
+	text-decoration: none;
 }
 
-a:hover{
-  color: #006699;
-  text-decoration: underline;
+a:hover {
+	color: #006699;
+	text-decoration: underline;
 }
 
-h1{
- font-family: Verdana,Arial,sans-serif;
- font-size: 120%;
- color: #334d55;
- margin: 0px;
- padding: 0px;
+h1 {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 120%;
+	color: #334d55;
+	margin: 0px;
+	padding: 0px;
 }
 
-h2{
- font-family: Arial,sans-serif;
- font-size: 120%;
- color: #334d55;
- margin: 0px;
- padding: 0px;
+h2 {
+	font-family: Arial, sans-serif;
+	font-size: 120%;
+	color: #334d55;
+	margin: 0px;
+	padding: 0px;
 }
 
-h3{
- font-family: Arial,sans-serif;
- font-size: 110%;
- color: #334d55;
- margin: 0px;
- padding: 0px;
+h3 {
+	font-family: Arial, sans-serif;
+	font-size: 110%;
+	color: #334d55;
+	margin: 0px;
+	padding: 0px;
 }
 
-h4{
- font-family: Arial,sans-serif;
- font-size: 100%;
- color: #334d55;
- margin: 0px;
- padding: 0px;
-}
-
-#header{
-  padding: 7px;
-  border-bottom: 1px solid #E2EAEF;
-  height: 90px;
-  width: 100%;
-  background-image: url(images/banner.jpg); 
-  background-repeat: no-repeat;
-  background-position: top right;
+h4 {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: #334d55;
+	margin: 0px;
+	padding: 0px;
 }
 
 #nav {
-  padding: 5px
-  border-bottom: 1px solid #E2EAEF;
+	padding: 5px;
+	/*   border-bottom: 1px solid #E2EAEF;
   border-top: 1px solid #E2EAEF;
-  border-right: 1px solid #E2EAEF;
-  background-color: #FFE3AA;
-  float: left;
-  width: 15%;
-  min-height: 275px;
+  border-right: 1px solid #E2EAEF; */
+	border-bottom: 5px solid #666699;
+/* 	border-top: 5px solid #666699; */
+/* 	border-left: 5px solid #666699; */
+	/* 	border-right: 5px solid #5c5c8a; */ /*lighter dark blue */
+	/* background-color: #8D97C2; */
+	/* background-color: #062F4F; */ /* dark blue */
+	float: right;
+	width: 50%;
+	min-height: 750px;
+	
+    background:  #062F4F; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left top, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top left, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
 }
+
+/* #grad1 {
+    height: 200px;
+    background: red; For browsers that do not support gradients    
+    background: -webkit-linear-gradient(left top, red, yellow); For Safari 5.1 to 6.0
+    background: -o-linear-gradient(bottom right, red, yellow); For Opera 11.1 to 12.0
+    background: -moz-linear-gradient(bottom right, red, yellow); For Firefox 3.6 to 15
+    background: linear-gradient(to bottom right, red, yellow); Standard syntax (must be last)
+} */
 
 #main {
-  padding: 10px;
-  border-top: 1px solid #E2EAEF;
-  float: left;
-  width: 60%;
+	/* background-color: #062F4F; */ /* dark blue */
+	 padding-left: 10px; 
+	padding-top: 10px;
+	/* border-top: 1px solid #E2EAEF; */
+	border-bottom: 5px solid #666699;
+/* 	border-top: 5px solid #666699; */
+/* 	border-right: 5px solid #666699; */
+	float: left;
+	width: 48%;
+	display: block;
+	min-height: 750px;
+	/*   border-bottom: 1px solid red; */
+	position: relative;
+	/* this makes it only show in the "main" section as a partial image only at the top of the main div, not in the heading*/
+	    background:  #062F4F; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top right, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
 }
 
-#news {
+#main::after {
+	content: ""; /*does this do anything? */
+	/* min-height: 1000px; */
+	/*background: url(https://s-media-cache-ak0.pinimg.com/originals/ea/43/0a/ea430a7c68769602daf4faf9b1703cf4.gif) no-repeat center center fixed;  */
+	/*this one moves */
+	/*  background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/lit-up-starry-sky-in-space_-jsf4r3eb__M0000.jpg) no-repeat center center fixed;  */
+	opacity: 0.50;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.demoInputBox{
+	border-radius: 10px;
+	margin-left: 10px;
+}
+
+.row1 {
+	margin-top: 0px;  /*this adds the space between the "select" label and the "deck" label */
+	padding-bottom: 15px;  /*this adds the space below the "select deck" drop down */
+	padding-left: 10px;
+	/* background-color: #e6eeff;  *//* light blue */
+	border-bottom-left-radius: 25px;
+	width: 30%; 
+	float: left;
+	clear: both;
+}
+
+.row1 p, .row2 p, .row3 p {
+	color: black;
+	/* background-color: #ffffe6;  *//* light yellow */
+	font-size: 150%;
+	font-weight: bold;
+	/* top right bottom left */
+ 	padding: 0px 5px 5px 0px;  /*this pads around the "Deck:" label */
+ 	margin-bottom: 0px;  
+ 	margin-left: 5px;  
+	border-radius: 10px;
+	color: white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.row2 {
+	margin-top: 0px;
+	padding-bottom: 15px;
+	/* background-color: #e6eeff;  *//* light blue */
+	width: 33%;
+	float: left;
+	/*	clear: both; */
+}
+
+/* .row2 p {
+	color: green;
+	background-color: white;
+		font-size: 150%;
+} */
+
+.row3 {
+	margin-top: 0px;
+	padding-bottom: 15px;
+	/* background-color: #e6eeff; */ /* light blue */
+	width: 34%;
+	float: left;
+	border-bottom-right-radius: 25px;
+}
+
+/* .row3 p {
+	color: green;
+	background-color: white;
+		font-size: 150%;
+} */
+
+#card-info {
+	clear: both;
+	width:95%;
+/* 	margin: 15px; */
+/* 	padding: 5px; */
+}
+
+/* #news {
   padding: 5px;
   border-top: 1px solid #E2EAEF;
   border-left: 1px solid #E2EAEF;
-  background-color: #f3f6f8;
+  background-color: #8D97C2;
   float: right;
-  width: 22%;
+  width: 20%;
   min-height: 275px;
+} */
+
+/* for now left and right are the bullet points at the top*/
+.left {
+	font-family: Papyrus, fantasy;
+	/* font-size: 70%; */
+	font-weight: bold;
+	clear: both;
+	width: 39%;
+	float: left;
+	background-color: #fefbd8; /*light yellow*/
+	/* top right bottom left */
+	/* margin: 10px 0px 10px 0px; */
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/* border-top-left-radius: 25px; */
+	border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.right {
+	font-family: Papyrus, fantasy;
+	/* font-size: 70%; */
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+	width: 40%;
+	float: right;
+	background-color: #fefbd8;
+	border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.left ul, .right ul {
+	/* height: 125px; */
+	
+}
+
+.left li, .right li {
+	/* height: 125px; */
+	padding-bottom: 5px;
+	/* padding-top: 5px; */
+}
+
+.left span, .right span {
+	position: relative;
+	left: -10px;
+}
+
+/* for now left-top/bottom and right-top/bottom are the heart, present and primary sections*/
+/*.wrapper {
+
+	 /* padding-bottom: 10px;  */
+
+/* 	width: 110%; */
+/* clear: both;
+	border-bottom: 3px solid red; */
+/*}*/
+.left-top {
+	padding-left: 5px;
+	width: 46%;
+	float: left;
+	/* background-color: #F4EDEB;  */
+	background-color: #e6eeff; /* light blue */
+	border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.left-bottom {
+	clear: both;
+	margin-top:15px;
+	padding-left: 5px;
+	width: 46%;
+	float: left;
+	/* background-color: #F4EDEB; */
+	background-color: #e6eeff; /* light blue */
+	 border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.right-top {
+	padding-left: 15px;
+	width: 44%;
+	float: left;
+	margin-left: 15px;
+	margin-right: 10px;
+	background-color: #e6eeff; /* light blue */
+	/* border: 1px solid #062F4F; */
+	border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.right-bottom {
+	margin-top:15px;
+	margin-left: 15px;
+	margin-right: 10px;
+	padding-left: 15px;
+	width: 44%;
+	float: left;
+	/*  background-color: #F4EDEB;  */
+	background-color: #e6eeff; /* light blue */
+	/* border: 1px solid #062F4F; */
+	border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.left-top span, .right-top span, .left-bottom span, .right-bottom span {
+	position: relative;
+	left: -15px;
+}
+
+.left-top ul {
+	height: 125px;
+}
+
+.left-top p, .right-top p, .left-bottom p, .right-bottom p {
+	font-weight: bold;
+	font-size: 105%;;
+}
+
+.left-bottom ul {
+	/*  height: 125px;  */
+	
+}
+
+.right-top ul {
+	height: 125px;
+}
+
+.right-bottom ul {
+	/* height: 125px; */
+	
+}
+
+p+ul {
+	margin-top: -10px;
+}
+
+.noBullet {
+	list-style-type: none;
+}
+
+.centered {
+	margin: auto;
+	width: 65%;
+}
+
+/* .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+ */
+#selectCardLabel {
+	/* clear: both; */
+	font-size: 150%;
+	/* font-weight: bold; */
+	/* top right bottom left */
+	padding: 15px 10px 0px 8px;
+/* 	background-color: white;  */
+/* 	border-top-left-radius: 25px;
+	border-top-right-radius: 25px; */
+	width: 95%;
+	color: white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#selectCardLabelSpreadName{
+	font-family: Papyrus, fantasy;
+	font-size: 150%;
+	font-weight: bold;
+	/* top right bottom left */
+	padding: 5px 10px 0px 8px;
+/* 	background-color: white;  */
+/* 	border-top-left-radius: 25px;
+	border-top-right-radius: 25px; */
+	width: 95%;
+	color: white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+	text-transform: uppercase;
+}
+
+#spreadPositionImage {
+	/* top right bottom left */
+	margin-top: 10px; /* shoves the image down away from the header */
+	/* top right bottom left */
+	padding: 0px 0px 5px 10px;
+	float: right;
+	width: 152px;
+	height: 114px;
+	background-image: url(celticCrossSpread_pos1.jpg);
+	/* vertical horizontal */
+	background-size: 152px 114px;
+	background-repeat: no-repeat;
+
+}
+
+#spreadPositionLabel {
+	margin: 0px;
+	/* top right bottom left */
+	padding: 20px 10px 15px 10px;
+	float: right;
+
+}
+
+#spreadName {
+	font-family: Papyrus, fantasy;
+	text-align: right;
+	font-size: 150%;
+	font-weight: bold;
+	color: white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding-right: 10px;
+}
+
+#cardPosition {
+	font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino, URW Palladio L, Nimbus Roman No9 L, serif;
+	text-align: right;
+	font-size: 200%;
+	font-weight: bold;
+	color: white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding-right: 10px;
+}
+
+#cardImageUrl {
+	float: right;
+	padding: 10px;
+}
+
+#cardInfo {
+	padding-top: 15px;
+}
+
+#cardName {
+	font-size: 150%;
+	color: black;
+	font-weight: bold;
+	background-color: #f0f0f5;
+	padding: 7px; 
+	/* horizontal vertical */
+	border-top-left-radius: 15px 30px;
+/* 	border-top-right-radius: 15px 30px; */
+}
+
+#cardDescription {
+	font-size: 100%;
+	color: black;
+	background-color: #f0f0f5;
+	padding: 7px; 
+	/* border-radius: 25px; */
+}
+
+#header {
+	/*  padding: 7px; */
+	/*  padding-left: 7px; */
+	border-bottom: 1px solid #E2EAEF;
+	height: 128px;
+	width: 100%;
+	/*background-image: url(images/banner.jpg); */
+	background-image: url(banner.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+#header h1 {
+	padding-top: 20px;
+	padding-left: 7px;
 }
 
 #footer {
-  clear: both;
-  text-align: center;
-  padding: 7px;
-  border-bottom: 1px solid #E2EAEF;
-  border-top: 1px solid #E2EAEF;
-  background-color: #f3f6f8;
-  width: 100%;
+	clear: both;
+	text-align: center;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #E2EAEF;
+	border-top: 1px solid #E2EAEF;
+	background-color: #f3f6f8;
+	width: 100%;
 }

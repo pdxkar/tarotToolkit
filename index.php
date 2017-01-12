@@ -10,10 +10,10 @@ data in the session array variable. (Lesson 10 chap 3)-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
    <link rel="stylesheet" type="text/css" href="mystyle.css" /> 
-      <link rel="stylesheet" type="text/css" href="style.css" /> 
-  <title>The Recipe Center</title>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+  <title>The Tarot Toolkit</title>
 </head>
 <body>
   <div id="header">
@@ -35,16 +35,10 @@ data in the session array variable. (Lesson 10 chap 3)-->
                    }
                   ?>
     </div>
-    <div id="news">
-           <?php include("news.inc.php"); ?>
-    </div>
+
   </div> 
   <div id="footer">
          <?php include("footer.inc.php"); ?>
-  </div>
-  <!-- is this db section still necessary? -->
-  <div id="db">
-  		<?php include("db.inc.php"); ?>
   </div>
 </body>
 </html>

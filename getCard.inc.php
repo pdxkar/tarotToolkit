@@ -1,37 +1,48 @@
 <?php
 include 'db.inc.php';
+include 'card.php';
 
 $cardId = $_POST["cardId"];
+$card;
 
 if(!empty($_POST["cardId"])) {
 
 	//Fetch the card with the chosen cardId
-	$st = $app['pdo']->prepare('SELECT cardId, deckId, cardNumber, cardName, suitId, cardDescription, cardImageUrl from cards where cardId = :cardId');
+	$st = $app['pdo']->prepare(
+			'SELECT cards.cardId, 
+					cards.deckId, 
+					cards.cardNumber, 
+					cards.cardName, 
+					cards.suitId, 
+					cards.cardDescription, 
+					cards.cardImageUrl from cards where cardId = :cardId');
 
 	$array = array (
 			'cardId' => $cardId
 	);
 
 	$st->execute ( $array );
+	
+	$row = $st->fetch (PDO::FETCH_ASSOC);
+	
+	$cardId = $row ['cardId'];
+	$deckId = $row ['deckId'];
+	$cardNumber = $row ['cardNumber'];
+	$cardName = $row ['cardName'];
+	$suitId = $row ['suitId'];
+	$cardDescription = $row ['cardDescription'];
+	$cardImageUrl = $row ['cardImageUrl'];
+	
 
-	$resultCard = $st->fetchAll();
-	?>
-  	<option value="">??</option>
-  	<?php
-		foreach($resultCard as $card) {
-	?>
-  <option value="<?php echo $card["cardId"]; ?>">
-  
-  <?php echo $card["cardId"]; ?>
-  <?php echo $card["deckId"]; ?>
-  <?php echo $card["cardNumber"]; ?>
-  <?php echo $card["cardName"]; ?>
-  <?php echo $card["suitId"]; ?>
-  <?php echo $card["cardDescription"]; ?>
-  <?php echo $card["cardImageUrl"]; ?>
-  
-  </option>
-  <?php
+	echo "<div id=\"cardInfo\">
+	<div id=\"cardName\">$cardName</div>
+	<div id=\"cardImageUrl\"><img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:284px;\"></div>
+	<div id=\"cardDescription\">$cardDescription</div>
+	<div style=\"clear: both\"></div>
+	</div>";
+
 	}
-} 
-  ?>
+		
+		?>
+
+

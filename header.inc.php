@@ -1,2 +1,2 @@
-<h1><br>The Recipe Center</h1>
-<h4><em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Just like mom use to make"</em></h4>
+<h1>The Tarot Toolkit</h1>
+<h4><em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Everyday Magic every day..."</em></h4>

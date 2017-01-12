@@ -15,6 +15,6 @@
 		//diplay data in the web page
 		//first create an HTML link
 		//echo "<br>$date - <b>$title</b><br>$article<br><br>";
-		echo("arf!");
+		echo("arf!<br/>");
 	}
 ?>
