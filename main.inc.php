@@ -43,6 +43,7 @@ $resultDecks = $st->fetchAll();
 
 </div>
 
+<div id="cardInfo"></div>
 	
 <script>
 function getSuits(val) {

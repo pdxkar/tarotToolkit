@@ -6,6 +6,7 @@ body {
 	/*   font-family: Chalkduster, fantasy; */ /* nah */
 	/* font-family: Snell Roundhand, cursive; */
 /* 	font-family: Verdana, Arial, sans-serif; */
+	font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
 	font-size: 90%;
 	color: #333333;
 	line-height: 1.166;
@@ -139,6 +140,9 @@ h4 {
 }
 
 .demoInputBox{
+	font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
+	font-size: 110%;
+	font-weight: bold;
 	border-radius: 10px;
 	margin-left: 10px;
 }
@@ -172,7 +176,7 @@ h4 {
 	margin-top: 0px;
 	padding-bottom: 15px;
 	/* background-color: #e6eeff;  *//* light blue */
-	width: 33%;
+	width: 30%;
 	float: left;
 	/*	clear: both; */
 }
@@ -330,6 +334,7 @@ h4 {
 }
 
 .left-top p, .right-top p, .left-bottom p, .right-bottom p {
+	font-family: Papyrus, fantasy;
 	font-weight: bold;
 	font-size: 105%;;
 }
@@ -447,6 +452,12 @@ p+ul {
 
 #cardInfo {
 	padding-top: 15px;
+	background-image: url(https://s-media-cache-ak0.pinimg.com/736x/41/d8/37/41d8375f3237702fed8b274ae68306ab.jpg);
+	/* width height */
+	background-size: 465px 700px;
+	opacity: 0.75;
+	background-repeat: no-repeat;
+	min-height: 1000px;
 }
 
 #cardName {
@@ -461,7 +472,7 @@ p+ul {
 }
 
 #cardDescription {
-	font-size: 100%;
+	font-size: 110%;
 	color: black;
 	background-color: #f0f0f5;
 	padding: 7px; 
@@ -481,8 +492,15 @@ p+ul {
 }
 
 #header h1 {
+	font-size: 300%;
+	font-weight: bold;
+	font-family: Papyrus, fantasy;
 	padding-top: 20px;
 	padding-left: 7px;
+}
+
+#header h4 {
+		font-family: Papyrus, fantasy;
 }
 
 #footer {
