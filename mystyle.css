@@ -8,11 +8,14 @@ body {
 /* 	font-family: Verdana, Arial, sans-serif; */
 	font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
 	font-size: 90%;
-	color: #333333;
 	line-height: 1.166;
 	margin: 0px;
 	padding: 0px;
-	/*   border: 2px solid red; */
+	background:  #062F4F; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top right, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
 }
 
 a {
@@ -113,7 +116,7 @@ h4 {
 	/*   border-bottom: 1px solid red; */
 	position: relative;
 	/* this makes it only show in the "main" section as a partial image only at the top of the main div, not in the heading*/
-	    background:  #062F4F; /* For browsers that do not support gradients */    
+	background:  #062F4F; /* For browsers that do not support gradients */    
     background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
@@ -181,12 +184,6 @@ h4 {
 	/*	clear: both; */
 }
 
-/* .row2 p {
-	color: green;
-	background-color: white;
-		font-size: 150%;
-} */
-
 .row3 {
 	margin-top: 0px;
 	padding-bottom: 15px;
@@ -196,28 +193,10 @@ h4 {
 	border-bottom-right-radius: 25px;
 }
 
-/* .row3 p {
-	color: green;
-	background-color: white;
-		font-size: 150%;
-} */
-
 #card-info {
 	clear: both;
 	width:95%;
-/* 	margin: 15px; */
-/* 	padding: 5px; */
 }
-
-/* #news {
-  padding: 5px;
-  border-top: 1px solid #E2EAEF;
-  border-left: 1px solid #E2EAEF;
-  background-color: #8D97C2;
-  float: right;
-  width: 20%;
-  min-height: 275px;
-} */
 
 /* for now left and right are the bullet points at the top*/
 .left {
@@ -366,13 +345,6 @@ p+ul {
 	width: 65%;
 }
 
-/* .center {
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-}
- */
 #selectCardLabel {
 	/* clear: both; */
 	font-size: 150%;
@@ -452,12 +424,12 @@ p+ul {
 
 #cardInfo {
 	padding-top: 15px;
-	background-image: url(https://s-media-cache-ak0.pinimg.com/736x/41/d8/37/41d8375f3237702fed8b274ae68306ab.jpg);
-	/* width height */
+/* 	background-image: url(https://s-media-cache-ak0.pinimg.com/736x/41/d8/37/41d8375f3237702fed8b274ae68306ab.jpg);
+	width height
 	background-size: 465px 700px;
 	opacity: 0.75;
-	background-repeat: no-repeat;
-	min-height: 1000px;
+	background-repeat: no-repeat; */
+	/* min-height: 1000px; */
 }
 
 #cardName {
@@ -513,3 +485,27 @@ p+ul {
 	background-color: #f3f6f8;
 	width: 100%;
 }
+
+.container {
+	width: 800px;
+	margin: 2em auto;
+	padding: 10px 30px;
+	/* background-color: #FDF5E6; */ /* OldLace */
+	background:  #062F4F; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top right, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
+}
+
+#welcome {
+	margin: 2em auto;
+	padding: 10px 30px;
+	background-color: #FDF5E6;  /* OldLace */
+}
+
+#navigation {
+	background-color: #FDF5E6;    
+
+}
+

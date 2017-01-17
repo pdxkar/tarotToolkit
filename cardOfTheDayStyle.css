@@ -1,0 +1,47 @@
+#cardOfTheDayName {
+	text-align: center;
+	font-size: 150%;
+	color: black;
+	font-weight: bold;
+	background-color: #f0f0f5;
+	padding: 7px; 
+	/* horizontal vertical */
+	border-top-left-radius: 15px 30px;
+}
+
+#cardBullets {
+/* 	display: flex;
+    justify-content: space-between; */
+	width: 100%; 
+	min-height: 50px;
+ 	float: left;  /*for some reason removing this makes the bullet box shrink vertically */
+	background-color: #fefbd8; /*light yellow*/
+	/* top right bottom left */
+	/* margin: 10px 0px 10px 0px; */
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	/* border-top-left-radius: 25px; */
+
+}
+
+#cardBullets ul {
+	list-style-type: none;
+}
+
+#cardBullets li {
+	text-align: center;
+	width: 18%;
+	font-size: 110%;
+ 	padding-left: 10px;
+	padding-right: 10px; 
+	float: left;
+	margin-right: 15px; 
+	background-color: #f0f0f5; 
+	font-family: Papyrus, fantasy;
+	font-weight: bold;
+	border: 1px solid #062F4F; 
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+

@@ -36,7 +36,7 @@ if(!empty($_POST["cardId"])) {
 
 	echo "<div id=\"cardInfo\">
 	<div id=\"cardName\">$cardName</div>
-	<div id=\"cardImageUrl\"><img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:284px;\"></div>
+	<div id=\"cardImageUrl\"><img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;\"></div>
 	<div id=\"cardDescription\">$cardDescription</div>
 	<div style=\"clear: both\"></div>
 	</div>";
