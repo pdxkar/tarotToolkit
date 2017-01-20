@@ -1,0 +1,88 @@
+.container {
+	width: 800px;
+	margin: 2em auto;
+	padding: 10px 30px;
+}
+
+#selectCardOfTheDayLabel {
+	display: none;
+}
+
+#cardBullets {
+	width: 100%; 
+	min-height: 50px;
+ 	float: left;  /*for some reason removing this makes the bullet box shrink vertically */
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+#cardBullets ul {
+	list-style-type: none;
+}
+
+#cardBullets li {
+	text-align: center;
+	font-size: 150%;
+ 	padding-left: 10px;
+	padding-right: 10px; 
+	float: left;
+	margin-right: 15px; 
+	font-family: Papyrus, fantasy;
+	font-weight: bold;
+	border: 1px solid #062F4F; /* darkest blue */
+	box-shadow: 10px 10px 5px #062F4F;
+}
+
+.actionHeader {
+	margin-top: 20px;
+	margin-left: 20px;
+	font-weight: bold;
+ 	border: 1px solid #062F4F; /* darkest blue */
+}
+
+#actionListItem {
+	margin-left: 20px;
+	padding-left: 10px;
+	border-left: 1px solid #062F4F; /* darkest blue */
+	border-right: 1px solid #062F4F; /* darkest blue */
+}
+
+#actionListItem ul {
+	list-style-type: none;
+	 padding-left: 8px;
+}
+
+#actionListItem li {
+	text-indent: -1em; 
+}
+
+.actionContainer {
+	float: left;
+}
+
+#cardOfTheDayDescriptionLabel {
+	font-weight: bold;
+	font-size: 150%;
+	border: 1px solid #062F4F; /* darkest blue */
+	box-shadow: 10px 10px 5px #062F4F;
+	/* horizontal vertical */
+	border-top-left-radius: 15px 30px;
+ 	border-top-right-radius: 15px 30px; 
+ 	padding-top: 7px; 
+	padding-left: 17px; 
+	padding-bottom: 7px; 
+	width: 175px;
+}
+
+#cardOfTheDayDescription {
+	border: 1px solid #062F4F; /* darkest blue */
+	box-shadow: 10px 10px 5px #062F4F;
+	font-size: 110%;
+	color: black;
+	padding-top: 7px; 
+	padding-left: 17px; 
+	padding-right: 7px; 
+	padding-bottom: 7px; 
+}
+

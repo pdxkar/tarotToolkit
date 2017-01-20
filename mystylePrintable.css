@@ -4,11 +4,6 @@ body {
 	line-height: 1.166;
 	margin: 0px;
 	padding: 0px;
-	background:  #062F4F; /* For browsers that do not support gradients */    
-    background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to top right, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
 }
 
 a {
@@ -64,55 +59,28 @@ h4 {
 }
 
 #nav {
+	display: none;
 	padding: 5px;
-	/*   border-bottom: 1px solid #E2EAEF;
-  border-top: 1px solid #E2EAEF;
-  border-right: 1px solid #E2EAEF; */
 	border-bottom: 5px solid #666699;
-/* 	border-top: 5px solid #666699; */
-/* 	border-left: 5px solid #666699; */
-	/* 	border-right: 5px solid #5c5c8a; */ /*lighter dark blue */
-	/* background-color: #8D97C2; */
-	/* background-color: #062F4F; */ /* dark blue */
 	float: right;
 	width: 50%;
 	min-height: 750px;
-	
-    background:  #062F4F; /* For browsers that do not support gradients */    
-    background: -webkit-linear-gradient(left top, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to top left, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
 }
 
 #main {
-	/* background-color: #062F4F; */ /* dark blue */
-	 padding-left: 10px; 
+	padding-left: 10px; 
 	padding-top: 10px;
-	/* border-top: 1px solid #E2EAEF; */
 	border-bottom: 5px solid #666699;
-/* 	border-top: 5px solid #666699; */
-/* 	border-right: 5px solid #666699; */
 	float: left;
 	width: 48%;
 	display: block;
 	min-height: 750px;
-	/*   border-bottom: 1px solid red; */
 	position: relative;
 	/* this makes it only show in the "main" section as a partial image only at the top of the main div, not in the heading*/
-	background:  #062F4F; /* For browsers that do not support gradients */    
-    background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to top right, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
 }
 
 #main::after {
 	content: ""; /*does this do anything? */
-	/* min-height: 1000px; */
-	/*background: url(https://s-media-cache-ak0.pinimg.com/originals/ea/43/0a/ea430a7c68769602daf4faf9b1703cf4.gif) no-repeat center center fixed;  */
-	/*this one moves */
-	/*  background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/lit-up-starry-sky-in-space_-jsf4r3eb__M0000.jpg) no-repeat center center fixed;  */
 	opacity: 0.50;
 	top: 0;
 	left: 0;
@@ -135,46 +103,19 @@ h4 {
 }
 
 .row1 {
-	margin-top: 0px;  /*this adds the space between the "select" label and the "deck" label */
-	padding-bottom: 15px;  /*this adds the space below the "select deck" drop down */
-	padding-left: 10px;
-	/* background-color: #e6eeff;  *//* light blue */
-	border-bottom-left-radius: 25px;
-	width: 30%; 
-	float: left;
-	clear: both;
+	display: none;
 }
 
 .row1 p, .row2 p, .row3 p {
-	color: black;
-	/* background-color: #ffffe6;  *//* light yellow */
-	font-size: 150%;
-	font-weight: bold;
-	/* top right bottom left */
- 	padding: 0px 5px 5px 0px;  /*this pads around the "Deck:" label */
- 	margin-bottom: 0px;  
- 	margin-left: 5px;  
-	border-radius: 10px;
-	color: white; 
-	text-shadow: black 0.1em 0.1em 0.2em;
+	display: none;
 }
 
 .row2 {
-	margin-top: 0px;
-	padding-bottom: 15px;
-	/* background-color: #e6eeff;  *//* light blue */
-	width: 30%;
-	float: left;
-	/*	clear: both; */
+	display: none;
 }
 
 .row3 {
-	margin-top: 0px;
-	padding-bottom: 15px;
-	/* background-color: #e6eeff; */ /* light blue */
-	width: 34%;
-	float: left;
-	border-bottom-right-radius: 25px;
+	display: none;
 }
 
 #card-info {
@@ -190,7 +131,6 @@ h4 {
 	clear: both;
 	width: 39%;
 	float: left;
-	background-color: #fefbd8; /*light yellow*/
 	/* top right bottom left */
 	/* margin: 10px 0px 10px 0px; */
 	padding-top: 5px;
@@ -209,7 +149,6 @@ h4 {
 	margin-right: 10px;
 	width: 40%;
 	float: right;
-	background-color: #fefbd8;
 	border: 1px solid #062F4F; 
 	box-shadow: 10px 10px 5px #062F4F;
 }
@@ -243,8 +182,6 @@ h4 {
 	padding-left: 5px;
 	width: 46%;
 	float: left;
-	/* background-color: #F4EDEB;  */
-	background-color: #e6eeff; /* light blue */
 	border: 1px solid #062F4F; 
 	box-shadow: 10px 10px 5px #062F4F;
 }
@@ -255,8 +192,6 @@ h4 {
 	padding-left: 5px;
 	width: 46%;
 	float: left;
-	/* background-color: #F4EDEB; */
-	background-color: #e6eeff; /* light blue */
 	 border: 1px solid #062F4F; 
 	box-shadow: 10px 10px 5px #062F4F;
 }
@@ -267,8 +202,6 @@ h4 {
 	float: left;
 	margin-left: 15px;
 	margin-right: 10px;
-	background-color: #e6eeff; /* light blue */
-	/* border: 1px solid #062F4F; */
 	border: 1px solid #062F4F; 
 	box-shadow: 10px 10px 5px #062F4F;
 }
@@ -280,9 +213,6 @@ h4 {
 	padding-left: 15px;
 	width: 44%;
 	float: left;
-	/*  background-color: #F4EDEB;  */
-	background-color: #e6eeff; /* light blue */
-	/* border: 1px solid #062F4F; */
 	border: 1px solid #062F4F; 
 	box-shadow: 10px 10px 5px #062F4F;
 }
@@ -330,19 +260,13 @@ p+ul {
 }
 
 #selectCardLabel {
-	font-size: 150%;
-	/* top right bottom left */
-	padding: 15px 10px 0px 8px;
-	width: 95%;
-	color: white; 
-	text-shadow: black 0.1em 0.1em 0.2em;
+	display: none;
 }
 
 #selectCardLabelSpreadName{
 	font-family: Papyrus, fantasy;
 	font-size: 150%;
 	font-weight: bold;
-	/* top right bottom left */
 	padding: 5px 10px 0px 8px;
 	width: 95%;
 	color: white; 
@@ -406,32 +330,19 @@ p+ul {
 	font-size: 150%;
 	color: black;
 	font-weight: bold;
-	background-color: #f0f0f5;
 	padding: 7px; 
 	/* horizontal vertical */
 	border-top-left-radius: 15px 30px;
-/* 	border-top-right-radius: 15px 30px; */
 }
 
 #cardDescription {
 	font-size: 110%;
 	color: black;
-	background-color: #f0f0f5;
 	padding: 7px; 
-	/* border-radius: 25px; */
 }
 
 #header {
-	/*  padding: 7px; */
-	/*  padding-left: 7px; */
-	border-bottom: 1px solid #E2EAEF;
-	height: 128px;
-	width: 100%;
-	/*background-image: url(images/banner.jpg); */
-	background-image: url(banner.png);
-	background-repeat: no-repeat;
-	background-position: top right;
-	background-color: white;
+	display: none;
 }
 
 #header h1 {
@@ -443,29 +354,18 @@ p+ul {
 }
 
 #header h4 {
-		font-family: Papyrus, fantasy;
+	font-family: Papyrus, fantasy;
 }
 
 #footer {
-	clear: both;
-	text-align: center;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	border-bottom: 1px solid #E2EAEF;
-	border-top: 1px solid #E2EAEF;
-	background-color: #f3f6f8;
-	width: 100%;
+ 	display: none;
 }
-
 
 #welcome {
 	margin: 2em auto;
 	padding: 10px 30px;
-	background-color: #FDF5E6;  /* OldLace */
 }
 
 #navigation {
-	background-color: #FDF5E6;    
-
+  display: none;
 }
-

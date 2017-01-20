@@ -6,9 +6,8 @@ $st->execute();
 $resultDecks = $st->fetchAll();
 ?>
 <div class="container">
-		<div id="selectCardLabel">Select your Card of the Day</div>
-		<!-- <div id="selectCardLabelSpreadName">Celtic Cross Spread:</div> -->
-		<div id="cardPicker">
+		<div id="selectCardOfTheDayLabel">Select Your Card of the Day</div>
+		<div id="cardOfTheDayPicker"> <!-- I dont think this div label is used -->
 			<div class="row1">
 			<p>Deck:</p>
 			<select name="deck" id="deck-list" class="demoInputBox" onChange="getSuits(this.value);">
@@ -58,7 +57,7 @@ $resultDecks = $st->fetchAll();
 		$.ajax({
 		type: "POST",
 		url: "getCards.inc.php",
-		data:'suitId='+val,
+		data:'cardGroupId='+val,
 		success: function(data){
 			$("#cards-list").html(data);
 		}

@@ -1,28 +1,51 @@
-#cardOfTheDayName {
-	text-align: center;
+.container {
+	width: 800px;
+	margin: 2em auto;
+	padding: 10px 30px;
+	/* background-color: #FDF5E6; */ /* OldLace */
+	background:  #062F4F; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(right bottom, #062F4F, #f0f0f5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #062F4F, #f0f0f5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top right, #062F4F, #f0f0f5); /* Standard syntax (must be last) */
+}
+
+#cardOfTheDayInfo {
+	padding-top: 15px;
+	background-color: #fefbd8; /*light yellow*/
+	box-shadow: 10px 10px 5px #062F4F;
+	border: 1px solid #062F4F; /* darkest blue */
+}
+
+#selectCardOfTheDayLabel {
 	font-size: 150%;
+	/* top right bottom left */
+	padding: 15px 10px 0px 8px;
+	width: 95%;
+	color: white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#cardOfTheDayName {
+	font-family: Papyrus, fantasy;
+	text-align: center;
+	font-size: 200%;
 	color: black;
 	font-weight: bold;
-	background-color: #f0f0f5;
 	padding: 7px; 
 	/* horizontal vertical */
 	border-top-left-radius: 15px 30px;
+	text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 #cardBullets {
-/* 	display: flex;
-    justify-content: space-between; */
 	width: 100%; 
 	min-height: 50px;
  	float: left;  /*for some reason removing this makes the bullet box shrink vertically */
 	background-color: #fefbd8; /*light yellow*/
-	/* top right bottom left */
-	/* margin: 10px 0px 10px 0px; */
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 5px;
-	/* border-top-left-radius: 25px; */
-
 }
 
 #cardBullets ul {
@@ -31,17 +54,79 @@
 
 #cardBullets li {
 	text-align: center;
-	width: 18%;
-	font-size: 110%;
+	/* width: 18%; */
+	font-size: 150%;
  	padding-left: 10px;
 	padding-right: 10px; 
 	float: left;
 	margin-right: 15px; 
-	background-color: #f0f0f5; 
+	background-color: #f0f0f5; /*light grey */
 	font-family: Papyrus, fantasy;
 	font-weight: bold;
-	border: 1px solid #062F4F; 
+	border: 1px solid #062F4F; /* darkest blue */
 	box-shadow: 10px 10px 5px #062F4F;
 }
 
+.actionHeader {
+	margin-top: 20px;
+	margin-left: 20px;
+	font-weight: bold;
+	background-color: #f0f0f5; /*light grey */
+ 	border: 1px solid #062F4F; /* darkest blue */
+}
 
+#actionListItem {
+	margin-left: 20px;
+	background-color: white;
+	padding-left: 10px;
+	border-left: 1px solid #062F4F; /* darkest blue */
+	border-right: 1px solid #062F4F; /* darkest blue */
+}
+
+#actionListItem ul {
+	list-style-type: none;
+	padding-left: 8px;
+}
+
+#actionListItem li {
+	text-indent: -1em; 
+}
+
+.actionContainer {
+	float: left;
+}
+
+#cardOfTheDayDescriptionLabel {
+	background-color: #f0f0f5; /*light grey */
+	font-weight: bold;
+	font-size: 150%;
+	border: 1px solid #062F4F; /* darkest blue */
+	box-shadow: 10px 10px 5px #062F4F;
+	/* horizontal vertical */
+	border-top-left-radius: 15px 30px;
+ 	border-top-right-radius: 15px 30px; 
+ 	/* top right bottom left */
+ 	padding-top: 7px; 
+	padding-left: 17px; 
+	padding-bottom: 7px; 
+	width: 175px;
+}
+
+#cardOfTheDayDescription, #inReadingsCardOfTheDayDescription {
+	float: left;
+	background-color: white;
+	border: 1px solid #062F4F; /* darkest blue */
+	box-shadow: 10px 10px 5px #062F4F;
+	font-size: 110%;
+	color: black;
+	/* top right bottom left */
+	margin: 20px 20px 20px 20px;
+	/* top right bottom left */
+	padding: 7px 7px 7px 17px; 
+}
+
+ #cardOfTheDayDescription img {
+	float: right;
+    margin: 0 0 10px 10px;
+	padding: 10px;
+} 

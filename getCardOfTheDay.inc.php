@@ -19,9 +19,8 @@ if(!empty($_POST["cardId"])) {
 		
 		$cardName = $row ['cardName'];
 		
-		echo "<div id=\"cardInfo\">
-		<div id=\"cardOfTheDayName\">$cardName</div>
-		</div>";
+		echo "<div id=\"cardOfTheDayInfo\">";
+		echo "<div id=\"cardOfTheDayName\">$cardName</div>";
 	}
 	
 	//Bullet Points
@@ -41,9 +40,7 @@ if(!empty($_POST["cardId"])) {
 	
 	//put the bullet points into an array so that they can be counted
 	//declare the bullet point array
-	$bulletArray; 
-	
-
+	$bulletArray = array(); 
 	
 	while ($row = $st2->fetch (PDO::FETCH_ASSOC)){
 		
@@ -52,59 +49,78 @@ if(!empty($_POST["cardId"])) {
 
 	}
 	
-	//how many bullet points?
-	$numberOfBulletPoints = sizeof($bulletArray);
-	//width = 100 / number of bullet points (i.e. 4 bullets => 100/4 = width = 25%)
-	$widthOfBulletDiv = abs(90/$numberOfBulletPoints);
-	
-	echo "<div id=\"cardBullets\" >";
-	echo "<ul>";
-	
-	for ($x = 0; $x < $numberOfBulletPoints; $x++){
-		//echo "<li>$bulletArray[$x]</li>";
-		echo "<li style=\"width: ";
-		//echo "30%;";
-		echo $widthOfBulletDiv;
-		echo "%;\">";
-		echo "$bulletArray[$x]</li>";
-	}
-	
-	echo "</ul>";
-	echo "</div>";
-
-	echo "<div style=\"clear: both\"></div>";
-	
-	//Actions
-	//get all of the bullet details associated with this card Id
-	$st3 = $app['pdo']->prepare(
-			'SELECT cardactionbulletdetails.isBulletListHeader,
-					cardactionbulletdetails.cardActionBulletDetailText
-					from cardactionbulletdetails
-					WHERE cardactionbulletdetails.cardId = :cardId
-					ORDER BY 
-					cardactionbulletdetails.cardactionbulletdetailid');
-	
-	$array = array (
-			'cardId' => $cardId
-	);
-	
-	$st3->execute ( $array );
-	while ($row = $st3->fetch (PDO::FETCH_ASSOC)){
-
-		$isBulletListHeader = $row ['isBulletListHeader'];
-		$cardActionBulletDetailText = $row ['cardActionBulletDetailText'];
+	if(sizeof($bulletArray) > 0){
+		//how many bullet points?
+		$numberOfBulletPoints = sizeof($bulletArray);
+		//width = 100 / number of bullet points (i.e. 4 bullets => 100/4 = width = 25%)
+		$widthOfBulletDiv = abs(90/$numberOfBulletPoints);
 		
-		if($isBulletListHeader){	
-			echo "<div>
-			<div><h3>$cardActionBulletDetailText</h3></div>
-			<div style=\"clear: both\"></div>
-			</div>";
-		} else {
-			echo "<div>
-			<div>$cardActionBulletDetailText</div>
-			<div style=\"clear: both\"></div>
-			</div>";
+		echo "<div id=\"cardBullets\" >";
+		echo "<ul>";
+		
+		for ($x = 0; $x < $numberOfBulletPoints; $x++){
+			echo "<li style=\"width: ";
+			echo $widthOfBulletDiv;
+			echo "%;\">";
+			echo "$bulletArray[$x]</li>";
 		}
+		
+		echo "</ul>";
+		echo "</div>";
+	
+		echo "<div style=\"clear: both\"></div>";
+		
+		//Actions
+		//get all of the bullet details associated with this card Id
+		$st3 = $app['pdo']->prepare(
+				'SELECT cardactionbulletdetails.isBulletListHeader,
+						cardactionbulletdetails.cardActionBulletDetailText
+						from cardactionbulletdetails
+						WHERE cardactionbulletdetails.cardId = :cardId
+						ORDER BY 
+						cardactionbulletdetails.cardactionbulletid ASC,
+						cardactionbulletdetails.isbulletlistheader DESC');
+		
+		$array = array (
+				'cardId' => $cardId
+		);
+		
+		$st3->execute ( $array );
+		
+		echo "<div>";
+		echo "<div>";
+		echo "<ul>";
+	
+		while ($row = $st3->fetch (PDO::FETCH_ASSOC)){
+	
+			$isBulletListHeader = $row ['isBulletListHeader'];
+			$cardActionBulletDetailText = $row ['cardActionBulletDetailText'];
+			
+			if($isBulletListHeader){	
+	
+				echo "</ul>";
+				echo "</div>";
+				echo "</div>";
+				echo "<div class=\"actionContainer\" style=\"width: ";
+				echo $widthOfBulletDiv+2;
+				echo "%;\">";
+				echo "<div class=\"actionHeader\">";
+				echo $cardActionBulletDetailText;
+				echo "</div>";
+				echo "<div id=\"actionListItem\">";
+				echo "<ul>";
+			} else {
+	
+				echo "<li>$cardActionBulletDetailText</li>";
+	
+			}
+		}
+		
+		echo "</ul>";
+		echo "</div>";
+		echo "</div>";
+		
+		echo "<div style=\"clear: both\"></div>";
 	}
 	
 	//Card Description
@@ -112,6 +128,7 @@ if(!empty($_POST["cardId"])) {
 	$st4 = $app['pdo']->prepare(
 			'SELECT	cards.cardName,
 					cards.cardDescription,
+					cards.inReadings,
 					cards.cardImageUrl from cards where cardId = :cardId');
 
 	$array = array (
@@ -124,15 +141,23 @@ if(!empty($_POST["cardId"])) {
 
 	$cardName = $row ['cardName'];
 	$cardDescription = $row ['cardDescription'];
+	$inReadings = $row ['inReadings'];
 	$cardImageUrl = $row ['cardImageUrl'];
 
 
-	echo "<div id=\"cardInfo\">
-	<div>Description</div>
-	<div id=\"cardImageUrl\"><img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;\"></div>
-	<div id=\"cardDescription\">$cardDescription</div>
-	<div style=\"clear: both\"></div>
-	</div>";
+	echo "<div id=\"cardInfo\">";
+	echo "<div id=\"cardOfTheDayDescription\">";
+	echo "<img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;\">";
+	echo "$cardDescription";
+	echo "<br />";
+	echo "<br />";
+	echo "$inReadings";
+	echo "</div>";
+	echo "<div style=\"clear: both\"></div>";
+	echo "</div>";
+	echo "</div>";
+	
+	//General Information relevant to the card of the day
 
 }
 

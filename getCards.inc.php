@@ -1,12 +1,12 @@
 <?php 
 include 'db.inc.php'; 
 
-$suitId = $_POST["suitId"];
+$suitId = $_POST["cardGroupId"];
 
-if(!empty($_POST["suitId"])) {
+if(!empty($_POST["cardGroupId"])) {
 
 //Fetch all cards of the selected suit
-  $st = $app['pdo']->prepare('SELECT cardId, deckId, cardNumber, cardName, suitId, cardDescription, cardImageUrl from cards where suitId = :suitId');
+  $st = $app['pdo']->prepare('SELECT cardId, deckId, cardNumber, cardName, cardGroupId, cardDescription, cardImageUrl from cards where cardGroupId = :suitId');
 	
   $array = array (
   		'suitId' => $suitId

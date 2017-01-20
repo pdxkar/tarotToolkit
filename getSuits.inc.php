@@ -6,7 +6,8 @@ $deckId = $_POST["deckId"];
 if(!empty($_POST["deckId"])) {
 
 //Fetch all suits of the selected deck
-  $st = $app['pdo']->prepare('SELECT suitId, deckId, suitName from suits where deckId = :deckId');
+  $st = $app['pdo']->prepare('SELECT cardGroupId, deckId, cardGroupName 
+  				from cardGroups where deckId = :deckId AND isSuit = 1');
 	
   $array = array (
   		'deckId' => $deckId
@@ -14,13 +15,13 @@ if(!empty($_POST["deckId"])) {
   
   $st->execute ( $array );
   
-  $resultSuits = $st->fetchAll();
+  $resultCardGroups = $st->fetchAll();
   ?>
   	<option value="">Select Suit</option>
   	<?php
-		foreach($resultSuits as $suits) {
+		foreach($resultCardGroups as $suits) {
 	?>
-  <option value="<?php echo $suits["suitId"]; ?>"><?php echo $suits["suitName"]; ?></option>
+  <option value="<?php echo $suits["cardGroupId"]; ?>"><?php echo $suits["cardGroupName"]; ?></option>
   <?php
 	}
 } 
