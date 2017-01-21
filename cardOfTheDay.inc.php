@@ -5,7 +5,9 @@ $st = $app['pdo']->prepare('SELECT deckId, deckName from decks order by deckId d
 $st->execute();
 $resultDecks = $st->fetchAll();
 ?>
+
 <div class="container">
+      <div id="datePicker">Today's Date: <input type = "text" id = "datepicker-13"></div>
 		<div id="selectCardOfTheDayLabel">Select Your Card of the Day</div>
 		<div id="cardOfTheDayPicker"> <!-- I dont think this div label is used -->
 			<div class="row1">
