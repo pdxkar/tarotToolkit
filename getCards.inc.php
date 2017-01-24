@@ -6,8 +6,13 @@ $suitId = $_POST["cardGroupId"];
 if(!empty($_POST["cardGroupId"])) {
 
 //Fetch all cards of the selected suit
-  $st = $app['pdo']->prepare('SELECT cardId, deckId, cardNumber, cardName, cardGroupId, cardDescription, cardImageUrl from cards where cardGroupId = :suitId');
-	
+
+  $st = $app['pdo']->prepare('SELECT cards.cardId, cardName, cardDescription, cardImageUrl 
+  			FROM cardsCardGroups 
+  			JOIN cards ON cards.cardId = cardsCardGroups.cardId 
+  			JOIN cardGroups ON cardGroups.cardGroupId = cardsCardGroups.cardGroupId 
+  			WHERE cardgroups.cardGroupId = :suitId AND cardgroups.isSuit = 1');
+ 
   $array = array (
   		'suitId' => $suitId
   );

@@ -42,7 +42,7 @@ $resultDecks = $st->fetchAll();
 			
 			<div class="row4">
 			<p>Card Alignment:</p>
-			<select name="isReversed" id="isReversed" class="demoInputBox" onChange="thisIsATest(this.value);">
+			<select name="isReversed" id="isReversed" class="demoInputBox" onChange="rotateCard(this.value);">
 			<option value="upright">Upright</option>
 			<option value="reversed">Reversed</option>
 			</select>
@@ -89,7 +89,7 @@ $resultDecks = $st->fetchAll();
 		});
 	}
 
-	function thisIsATest(isReversed) {
+	function rotateCard(isReversed) {
 		var cardId = document.getElementById("card-id").value;
 		$.ajax({
 			type: "POST",

@@ -170,3 +170,8 @@
     transform: scaleY(-1);
     filter: flipv; /*IE*/
 }
+
+#groupName {
+	font-weight: bold;
+	font-size: 150%;
+}
