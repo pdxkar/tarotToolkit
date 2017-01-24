@@ -3,6 +3,7 @@ include 'db.inc.php';
 include 'card.php';
 
 $cardId = $_POST["cardId"];
+$isReversed = $_POST["isReversed"];
 
 if(!empty($_POST["cardId"])) {
 	
@@ -20,7 +21,14 @@ if(!empty($_POST["cardId"])) {
 		$cardName = $row ['cardName'];
 		
 		echo "<div id=\"cardOfTheDayInfo\">";
-		echo "<div id=\"cardOfTheDayName\">$cardName</div>";
+		if($isReversed == "reversed"){
+			echo "<div id=\"cardOfTheDayNameAndAlignmentContainer\">";
+			echo "<div id=\"cardOfTheDayNameReversed\">$cardName</div>";
+			echo "<div id=\"cardAlignment\">($isReversed)</div>";
+			echo "</div>";
+		} else {
+			echo "<div id=\"cardOfTheDayNameUpright\" style=\"text-align:center;\">$cardName</div>";
+		}
 	}
 	
 	//Bullet Points
@@ -147,7 +155,11 @@ if(!empty($_POST["cardId"])) {
 
 	echo "<div id=\"cardInfo\">";
 	echo "<div id=\"cardOfTheDayDescription\">";
+	if($isReversed == "reversed"){
+		echo "<img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;-moz-transform: scaleY(-1); -webkit-transform: scaleY(-1); transform: scaleY(-1); filter: flipv; \">";
+	} else {
 	echo "<img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;\">";
+	}
 	echo "$cardDescription";
 	echo "<br />";
 	echo "<br />";

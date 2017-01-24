@@ -7,6 +7,7 @@ $resultDecks = $st->fetchAll();
 ?>
 
 <div class="container">
+	  <!-- datePicker: https://www.tutorialspoint.com/jqueryui/jqueryui_datepicker.htm -->
       <div id="datePicker">Today's Date: <input type = "text" id = "datepicker-13"></div>
 		<div id="selectCardOfTheDayLabel">Select Your Card of the Day</div>
 		<div id="cardOfTheDayPicker"> <!-- I dont think this div label is used -->
@@ -38,8 +39,17 @@ $resultDecks = $st->fetchAll();
 			<option value="">Select Card</option>
 			</select>
 			</div>
+			
+			<div class="row4">
+			<p>Card Alignment:</p>
+			<select name="isReversed" id="isReversed" class="demoInputBox" onChange="thisIsATest(this.value);">
+			<option value="upright">Upright</option>
+			<option value="reversed">Reversed</option>
+			</select>
+			</div>
 		
 			<p id="card-info"></p>
+			<input type="hidden" id="card-id" value="2">
 		
 		</div>
 	
@@ -66,20 +76,35 @@ $resultDecks = $st->fetchAll();
 		});
 	}
 	
-	function getCard(val) {
+	function getCard(cardId) {
+		document.getElementById("card-id").value = cardId;
+		var isReversed = "upright";
 		$.ajax({
 		type: "POST",
 		url: "getCardOfTheDay.inc.php",
-		data:'cardId='+val,
+		data: 'cardId='+cardId+'&isReversed='+isReversed,
 		success: function(data){
 			$("#card-info").html(data);
 		}
 		});
 	}
-	
+
+	function thisIsATest(isReversed) {
+		var cardId = document.getElementById("card-id").value;
+		$.ajax({
+			type: "POST",
+			url: "getCardOfTheDay.inc.php",
+			//data:'cardId='+cardId,
+			data: 'cardId='+cardId+'&isReversed='+isReversed,
+			success: function(data){
+				$("#card-info").html(data);
+			}
+		});
+	}
+
 	function selectDeck(val) {
-	$("#search-box").val(val);
-	$("#suggesstion-box").hide();
+		$("#search-box").val(val);
+		$("#suggesstion-box").hide();
 	}
 	</script>
 	

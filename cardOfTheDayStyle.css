@@ -26,9 +26,42 @@
 	text-shadow: black 0.1em 0.1em 0.2em;
 }
 
-#cardOfTheDayName {
-	font-family: Papyrus, fantasy;
+#cardOfTheDayNameAndAlignmentContainer {
+	
+}
+
+#cardOfTheDayNameUpright {
 	text-align: center;
+	font-family: Papyrus, fantasy;
+	font-size: 200%;
+	color: black;
+	font-weight: bold;
+	padding: 7px; 
+	/* horizontal vertical */
+	border-top-left-radius: 15px 30px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#cardOfTheDayNameReversed {
+	float: left;
+	width: 50%;
+	text-align: right;
+	font-family: Papyrus, fantasy;
+	/* text-align: center; */
+	font-size: 200%;
+	color: black;
+	font-weight: bold;
+	padding: 7px; 
+	/* horizontal vertical */
+	border-top-left-radius: 15px 30px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#cardAlignment {
+	text-align: left;
+	width: 50%;
+	font-family: Papyrus, fantasy;
+	float: left;
 	font-size: 200%;
 	color: black;
 	font-weight: bold;
@@ -130,3 +163,10 @@
     margin: 0 0 10px 10px;
 	padding: 10px;
 } 
+
+.flip-vertical {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv; /*IE*/
+}

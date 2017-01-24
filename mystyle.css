@@ -138,16 +138,14 @@ h4 {
 	margin-top: 0px;  /*this adds the space between the "select" label and the "deck" label */
 	padding-bottom: 15px;  /*this adds the space below the "select deck" drop down */
 	padding-left: 10px;
-	/* background-color: #e6eeff;  *//* light blue */
 	border-bottom-left-radius: 25px;
-	width: 30%; 
+	width: 20%; 
 	float: left;
 	clear: both;
 }
 
-.row1 p, .row2 p, .row3 p {
+.row1 p, .row2 p, .row3 p, .row4 p {
 	color: black;
-	/* background-color: #ffffe6;  *//* light yellow */
 	font-size: 150%;
 	font-weight: bold;
 	/* top right bottom left */
@@ -162,8 +160,7 @@ h4 {
 .row2 {
 	margin-top: 0px;
 	padding-bottom: 15px;
-	/* background-color: #e6eeff;  *//* light blue */
-	width: 30%;
+	width: 20%;
 	float: left;
 	/*	clear: both; */
 }
@@ -171,8 +168,15 @@ h4 {
 .row3 {
 	margin-top: 0px;
 	padding-bottom: 15px;
-	/* background-color: #e6eeff; */ /* light blue */
-	width: 34%;
+	width: 20%;
+	float: left;
+	border-bottom-right-radius: 25px;
+}
+
+.row4 {
+	margin-top: 0px;
+	padding-bottom: 15px;
+	width: 20%;
 	float: left;
 	border-bottom-right-radius: 25px;
 }
