@@ -165,9 +165,34 @@ if(!empty($_POST["cardId"])) {
 	echo "<br />";
 	echo "$inReadings";
 	echo "</div>";
-
-
 	
+	//Is the card reversed?  Include an explanation of reversed cards
+	$reversedCardsGroupId = 14;
+	
+	if($isReversed == "reversed"){
+		$st6 = $app['pdo']->prepare(
+			'SELECT cardGroupName, cardGroupDescription
+			FROM cardgroups
+			WHERE cardGroupId = :cardGroupId');
+		
+		$array = array (
+				'cardGroupId' => $reversedCardsGroupId
+		);
+		
+		$st6->execute ( $array );
+
+
+		$row = $st6->fetch (PDO::FETCH_ASSOC);
+		
+		$cardGroupName = $row ['cardGroupName'];
+		$cardGroupDescription = $row ['cardGroupDescription'];
+		echo "<div id=\"cardOfTheDayDescription\">";
+		echo "<div id=\"groupName\">";
+		echo $cardGroupName;
+		echo "</div>";
+		echo $cardGroupDescription;
+		echo "</div>";
+	}
 	//General Information relevant to the card of the day
 	//General Group Information relevant to the card of the day (i.e suit and/or King/Queen etc.
 	$st5 = $app['pdo']->prepare(
