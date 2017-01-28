@@ -9,7 +9,12 @@ $resultDecks = $st->fetchAll();
 <div class="container">
 	  <!-- datePicker: https://www.tutorialspoint.com/jqueryui/jqueryui_datepicker.htm -->
       <div id="datePicker">Today's Date: <input type = "text" id = "datepicker-13"></div>
-		<div id="selectCardOfTheDayLabel">Select Your Card of the Day</div>
+		<div id="selectCardOfTheDayLabel">What Was Your Card of the Day?</div>
+		<div id= "selectCardOfTheDayLabelSubtitle">
+		<?php echo
+		"<a href=\"index.php?content=cardDrawer&testId=1\">If you aren't using your own deck, you can draw your card from ours.</a>"
+		?>
+		</div>
 		<div id="cardOfTheDayPicker"> <!-- I dont think this div label is used -->
 			<div class="row1">
 			<p>Deck:</p>

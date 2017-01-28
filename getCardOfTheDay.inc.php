@@ -132,11 +132,27 @@ if(!empty($_POST["cardId"])) {
 	}
 	
 	//Card Description
+	//inReadings
+	//fiebig_summary
+	//fiebig_spiritualExperience
+	//fiebig_asAPrognosisOrTendency
+	//fiebig_asTheCardOfTheDay
+	//fiebig_forLoveAndRelationships
+	//fiebig_asAPrognosisOrTendency
+	//fiebig_forSuccessAndHappiness
+	//fiebig_forLoveAndRelationships
 	//Fetch the card with the chosen cardId
 	$st4 = $app['pdo']->prepare(
 			'SELECT	cards.cardName,
 					cards.cardDescription,
 					cards.inReadings,
+					cards.fiebig_summary,
+					cards.fiebig_basicMeaning,
+					cards.fiebig_spiritualExperience,
+					cards.fiebig_asTheCardOfTheDay,
+					cards.fiebig_asAPrognosisOrTendency,
+					cards.fiebig_forLoveAndRelationships,
+					cards.fiebig_forSuccessAndHappiness,
 					cards.cardImageUrl from cards where cardId = :cardId');
 
 	$array = array (
@@ -150,21 +166,75 @@ if(!empty($_POST["cardId"])) {
 	$cardName = $row ['cardName'];
 	$cardDescription = $row ['cardDescription'];
 	$inReadings = $row ['inReadings'];
+	$fiebig_summary = $row ['fiebig_summary'];
+	$fiebig_basicMeaning = $row ['fiebig_basicMeaning'];
+	$fiebig_spiritualExperience = $row ['fiebig_spiritualExperience'];
+	$fiebig_asTheCardOfTheDay = $row ['fiebig_asTheCardOfTheDay'];
+	$fiebig_asAPrognosisOrTendency = $row ['fiebig_asAPrognosisOrTendency'];
+	$fiebig_forLoveAndRelationships = $row ['fiebig_forLoveAndRelationships'];
+	$fiebig_forSuccessAndHappiness = $row ['fiebig_forSuccessAndHappiness'];
 	$cardImageUrl = $row ['cardImageUrl'];
-
 
 	echo "<div id=\"cardInfo\">";
 	echo "<div id=\"cardOfTheDayDescription\">";
+	//if the card is "reversed" display its image upside down
 	if($isReversed == "reversed"){
 		echo "<img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;-moz-transform: scaleY(-1); -webkit-transform: scaleY(-1); transform: scaleY(-1); filter: flipv; \">";
 	} else {
 	echo "<img src=\"$cardImageUrl\" alt=\"W3Schools.com\" style=\"width:208px;height:300px;\">";
 	}
+	
+	echo "<div id=\"authorName\">";
+	echo "Interpretion of Joan Bunning:";
+	echo "</div>";
 	echo "$cardDescription";
 	echo "<br />";
 	echo "<br />";
 	echo "$inReadings";
 	echo "</div>";
+	if($fiebig_summary || $fiebig_basicMeaning || $fiebig_spiritualExperience || $fiebig_asTheCardOfTheDay || $fiebig_asAPrognosisOrTendency || $fiebig_forLoveAndRelationships || $fiebig_forSuccessAndHappiness){
+		echo "<br />";
+		echo "<br />";
+		echo "<div id=\"cardOfTheDayDescription\">";
+		echo "<div id=\"authorName\">";
+		echo "Interpretion of Fiebig and Burger:";
+		echo "</div>";
+	}
+	if($fiebig_summary){
+		echo "<b>Summary: </b>";
+		echo "$fiebig_summary";
+		echo "<br />";
+	}
+	if($fiebig_basicMeaning){
+		echo "<b>Basic Meaning: </b>";
+		echo "$fiebig_basicMeaning";
+		echo "<br />";
+	}
+	if($fiebig_spiritualExperience){
+		echo "<b>Spiritual Experience: </b>";
+		echo "$fiebig_spiritualExperience";
+		echo "<br />";
+	}
+	if($fiebig_asTheCardOfTheDay){
+		echo "<b>As the Card of the Day: </b>";
+		echo "$fiebig_asTheCardOfTheDay";
+		echo "<br />";
+	}
+	if($fiebig_asAPrognosisOrTendency){
+		echo "<b>As a Prognosis or Tendency: </b>";
+		echo "$fiebig_asAPrognosisOrTendency";
+		echo "<br />";
+	}
+	if($fiebig_forLoveAndRelationships){
+		echo "<b>For Love and Relationships: </b>";
+		echo "$fiebig_forLoveAndRelationships";
+		echo "<br />";
+	}
+	if($fiebig_forSuccessAndHappiness){
+		echo "<b>For Success and Happiness: </b>";
+		echo "$fiebig_forSuccessAndHappiness";
+		echo "</div>";
+	}
 	
 	//Is the card reversed?  Include an explanation of reversed cards
 	$reversedCardsGroupId = 14;
@@ -180,7 +250,6 @@ if(!empty($_POST["cardId"])) {
 		);
 		
 		$st6->execute ( $array );
-
 
 		$row = $st6->fetch (PDO::FETCH_ASSOC);
 		

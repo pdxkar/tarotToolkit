@@ -26,6 +26,16 @@
 	text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+#selectCardOfTheDayLabelSubtitle {
+	/* font-size: 150%; */
+	/* top right bottom left */
+	font-family: Papyrus, fantasy;
+	padding: 0px 10px 15px 25px;
+	width: 95%;
+	color: white; 
+	/* text-shadow: black 0.1em 0.1em 0.2em; */
+}
+
 #cardOfTheDayNameAndAlignmentContainer {
 	
 }
@@ -174,4 +184,9 @@
 #groupName {
 	font-weight: bold;
 	font-size: 150%;
+}
+
+#authorName {
+	font-weight: bold;
+	font-size: 105%;
 }
