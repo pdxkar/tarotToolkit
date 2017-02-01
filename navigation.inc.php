@@ -15,7 +15,7 @@ if (isset($_SESSION['valid_recipe_user'])) {
 	echo "<li><a href=\"index.php?content=cardOfTheDay&testId=1\">Card of the Day</a></li>";
 	echo "<li class=\"divider\"></li>";
 	echo "<li><a href=\"index.php?content=mainSection&testId=1\">Celtic Cross Spread</a></li>";
-	echo "<li><a href=\"index.php?content=youAreLoggedIn&testId=1\">Extra-Super-Fancy thing only Logged in People see</a></li>";
+	echo "<li><a href=\"index.php?content=shuffleTheCard&testId=1\">Shuffle the Cards</a></li>";
 	echo "</ul>";
 	echo "</li>";
 	echo "<li class=\"dropdown pull-right\">";
